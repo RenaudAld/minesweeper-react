@@ -1,68 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Minesweeper React App
 
-## Available Scripts
+## Quick launch
 
-In the project directory, you can run:
+Install the packages:
 
-### `npm start`
+```
+npm install
+```
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Run the app:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+```
+npm start
+```
 
-### `npm test`
+then go to http://localhost:3000/.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Structure
 
-### `npm run build`
+```
+public/
+src/
+    App.js
+    minesweeper.js
+    components/
+        WindowComponent.js
+        BoardComponent.js
+        RowComponent.js
+        CellComponent.js
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### public/
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Contains all the images to make the minesweeper like the cool Windows version
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### src/App.js
 
-### `npm run eject`
+The main component, stores the state of the game. Renders the control window and the board game. At the bottom the user can set the difficulty for the next game.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### src/minesweeper.js
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contains the Board class that implements all the methos to run the minesweeper game
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### src/components/CellComponent
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This components renders a cell according to its state and the state of the game.
 
-## Learn More
+#### src/components/RowComponent
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Renders a row of cell components.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### src/components/BoardComponent
 
-### Code Splitting
+Renders several row components.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+#### src/components/Windows
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This component renders a counter of how many mines a remaining and a reset button
